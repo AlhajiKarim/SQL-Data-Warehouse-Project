@@ -1,0 +1,67 @@
+--Souce CRM Created Tables
+----------cust_info table
+Create table silver.crm_cust_info (
+cst_id INT,
+cst_key NVARChar(50),
+cst_firstname nvarChar(50),
+cst_lastname nvarChar(50),
+cst_marital_status nvarchar(50),
+cst_gndr nvarchar(50),
+cst_create_date date,
+dwh_create_date DATETIME2 DEFAULT GETDATE()
+);
+
+
+----------prd_info table
+Create Table silver.crm_prd_info(
+prd_id int,
+cat_id NVARCHAR(50),
+prd_key nvarchar(50),
+prd_nm nvarchar(50),
+prd_cost int,
+prd_line nvarchar(50),
+prd_start_dt date,
+prd_end_dt date,
+dwh_create_date DATETIME2 DEFAULT GETDATE()
+);
+
+
+----------sales_details
+Create Table silver.crm_sales_details(
+sls_ord_num nvarchar(50),
+sls_prd_key	nvarchar(50),
+sls_cust_id int,
+sls_order_dt Date,
+sls_ship_dt	date,
+sls_due_dt	date,
+sls_sales int,
+sls_quantity int,
+sls_price int,
+dwh_create_date DATETIME2 DEFAULT GETDATE()
+);
+
+
+--Source ERP Created Tables
+----------cust_az12
+Create Table silver.erp_cust_AZ12(
+CID	NVARCHAR(50),
+BDATE DATE,
+GEN nvarchar(50),
+dwh_create_date DATETIME2 DEFAULT GETDATE()
+)
+
+----------LOC_A101
+Create Table silver.erp_LOC_A101(
+CID NVARCHAR(50),
+CNTRY NVARCHAR(50),
+dwh_create_date DATETIME2 DEFAULT GETDATE()
+)
+
+----------PX_Cat_G1V2
+Create Table silver.erp_px_cat_g1v2(
+ID NVARCHAR(50),
+CAT NVARCHAR(50),
+SUBCAT NVARCHAR(50),
+MAINTENANCE NVARCHAR(50),
+dwh_create_date DATETIME2 DEFAULT GETDATE()
+)
